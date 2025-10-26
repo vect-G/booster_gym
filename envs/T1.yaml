@@ -2,22 +2,30 @@ basic:
   checkpoint: null # set to -1 to load last saved model
   headless: false
   max_iterations: 10000 # set the maximum number of learning iterations to train for
-  sim_device: "cuda:0" # device for physics simulation
-  rl_device: "cuda:0" # device for the RL algorithm
+  sim_device: "cuda:2" # device for physics simulation
+  rl_device: "cuda:2" # device for the RL algorithm
   seed: 42 # seed - set to -1 to choose random seed
   description: ""
 
 env:
   num_envs: 4096
   num_observations: 47
+  # - 重力方向 (3)
+  # - 指令速度 (3)
+  # - 基座状态（位置、速度、角速度）
+  # - 关节位置 (12)
+  # - 关节速度 (12)
+  # - 上一次动作 (12)
   num_privileged_obs: 14
   num_actions: 12
+  # 左腿：Hip_Roll, Hip_Yaw, Hip_Pitch, Knee_Pitch, Ankle_Pitch, Ankle_Roll
+  # 右腿：同样6个
   env_spacing: 1.  # not used with plane terrain
 
 runner:
   horizon_length: 24
   mini_epochs: 20
-  save_interval: 100
+  save_interval: 500
   use_wandb: true
 
 viewer:
