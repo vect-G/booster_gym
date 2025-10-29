@@ -272,11 +272,11 @@ rewards:
     # torque_tiredness: -1.e-2
     # power: -2.e-3
     lin_vel_z: -2.
-    ang_vel_xy: -0.3
+    ang_vel_xy: -0.7
     # ang_vel_xy: -0.2
     dof_vel: -1.e-4
     dof_acc: -1.e-7
-    root_acc: -1.e-4
+    root_acc: -3.e-4
     action_rate: -1.5
     # action_rate: -1.
     dof_pos_limits: -1.
@@ -287,7 +287,7 @@ rewards:
     feet_vel_z: -0.
     feet_yaw_diff: -1.
     feet_yaw_mean: -1.
-    feet_roll: -0.1
+    feet_roll: -0.2
     feet_distance: -2.
     feet_swing: 5.   
     # feet_distance: -1.
