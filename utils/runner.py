@@ -23,7 +23,7 @@ class Runner:
         # prepare the environment
         self._get_args()
         self._update_cfg_from_args()
-        self._set_seed()
+        self._set_seed()   # 随机种子
         task_class = eval(self.cfg["basic"]["task"])
         self.env = task_class(self.cfg)
 
